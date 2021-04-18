@@ -6,22 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CAT BELL | 安心・安全な猫専門ペットショップ</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets//css/reset.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets//css/common.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets//js/script.js"></script>
 </head>
 
 <body class="drawer drawer--right">
     <header class="header header--default js-header">
         <div class="header__logo">
-            <img src="./assets/img/home/logo.svg" alt="CAT BELLロゴ画像">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets//img/home/logo.svg" alt="CAT BELLロゴ画像">
         </div>
         <button type="button" class="drawer-toggle drawer-hamburger">
             <span class="drawer-hamburger-icon"></span>
@@ -101,7 +101,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/01.png" alt="スコティッシュフォールド">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/01.png" alt="スコティッシュフォールド">
                                 </div>
                                 <p class="findPet__catName">スコティッシュ<br>フォールド</p>
                             </a>
@@ -109,7 +109,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/02.png" alt="アメリカンショートヘア">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/02.png" alt="アメリカンショートヘア">
                                 </div>
                                 <p class="findPet__catName">アメリカン<br>ショートヘア</p>
                             </a>
@@ -117,7 +117,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/03.png" alt="メインクイーン">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/03.png" alt="メインクイーン">
                                 </div>
                                 <p class="findPet__catName">メインクイーン</p>
                             </a>
@@ -125,7 +125,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/04.png" alt="エキゾチックショートヘア">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/04.png" alt="エキゾチックショートヘア">
                                 </div>
                                 <p class="findPet__catName">エキゾチック<br>ショートヘア</p>
                             </a>
@@ -133,7 +133,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/05.png" alt="ラグドール">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/05.png" alt="ラグドール">
                                 </div>
                                 <p class="findPet__catName">ラグドール</p>
                             </a>
@@ -141,7 +141,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/06.png" alt="ブリティッシュショートヘア">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/06.png" alt="ブリティッシュショートヘア">
                                 </div>
                                 <p class="findPet__catName">ブリティッシュ<br>ショートヘア</p>
                             </a>
@@ -149,7 +149,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/07.png" alt="マンチカン">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/07.png" alt="マンチカン">
                                 </div>
                                 <p class="findPet__catName">マンチカン</p>
                             </a>
@@ -157,7 +157,7 @@
                         <li class="findPet__item">
                             <a href="#" class="findPet__link">
                                 <div class="findPet__catImg">
-                                    <img src="./assets/img/typeList/4columns/08.png" alt="サイベリアン">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/08.png" alt="サイベリアン">
                                 </div>
                                 <p class="findPet__catName">サイベリアン</p>
                             </a>
@@ -212,7 +212,7 @@
                         <li class="blog__item">
                             <a href="#" class="blog__link">
                                 <div class="blog__img">
-                                    <img src="./assets/img/blog/00.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/00.jpg" alt="">
                                 </div>
                                 <div class="blog__info">
                                     <h3 class="blog__title">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪</h3>
@@ -223,7 +223,7 @@
                         <li class="blog__item">
                             <a href="#" class="blog__link">
                                 <div class="blog__img">
-                                    <img src="./assets/img/blog/01.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/01.jpg" alt="">
                                 </div>
                                 <div class="blog__info">
                                     <h3 class="blog__title">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</h3>
@@ -234,7 +234,7 @@
                         <li class="blog__item">
                             <a href="#" class="blog__link">
                                 <div class="blog__img">
-                                    <img src="./assets/img/blog/02.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/02.jpg" alt="">
                                 </div>
                                 <div class="blog__info">
                                     <h3 class="blog__title">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</h3>
@@ -245,7 +245,7 @@
                         <li class="blog__item">
                             <a href="#" class="blog__link">
                                 <div class="blog__img">
-                                    <img src="./assets/img/blog/03.jpg" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/03.jpg" alt="">
                                 </div>
                                 <div class="blog__info">
                                     <h3 class="blog__title">新年SEAL！療法食10%OFF&ペットアイテムおまとめ買いでプレゼント</h3>
@@ -269,7 +269,7 @@
                 </div>
                 <div class="about__wrap">
                     <div class="about__img">
-                        <img src="./assets/img/home/about_01.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets//img/home/about_01.png" alt="">
                     </div>
                     <div class="about__body">
                         <div class="about__title">ペットと人との笑顔ある未来の創造</div>
@@ -292,7 +292,7 @@
         <div class="footer__inner inner">
             <div class="footer__wrap">
                 <div class="footer__logo">
-                    <img src="./assets/img/home/logo.svg" alt="CAT BELLロゴ画像">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets//img/home/logo.svg" alt="CAT BELLロゴ画像">
                 </div>
                 <nav class="footer__nav">
                     <ul class="footer__list">
