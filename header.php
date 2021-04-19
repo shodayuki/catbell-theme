@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +15,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets//js/script.js"></script>
+	<?php wp_head(); ?>
 </head>
-
 <body class="drawer drawer--right">
 	<header class="header header--default js-header">
 		<div class="header__logo">

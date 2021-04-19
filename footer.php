@@ -21,3 +21,4 @@
     <p class="footer__copyRight">&copy; 2020-2022 CAT BELL Co., Ltd.</p>
   </div>
 </footer>
+<?php wp_footer(); ?>
