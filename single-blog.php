@@ -1,44 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>CAT BELL | ブログ詳細ページ</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/common.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
-	<script src="../assets/js/script.js"></script>
-</head>
-<body class="drawer drawer--right">
-<!-- header -->
-<header class="header header--default js-header">
-	<div class="header__logo">
-		<img src="../assets/img/home/logo.svg" alt="CAT BELLロゴ画像">
-	</div>
-	<button type="button" class="drawer-toggle drawer-hamburger">
-		<span class="drawer-hamburger-icon"></span>
-	</button>
-	<nav class="header__nav drawer-nav" role="navigation">
-		<ul class="header__list drawer-menu">
-			<li class="header__item">
-				<a href="#" class="drawer-menu-item">ペットを探す</a>
-			</li>
-			<li class="header__item">
-				<a href="#" class="drawer-menu-item">お店を探す</a>
-			</li>
-			<li class="header__item">
-				<a href="#" class="drawer-menu-item">ブログ一覧</a>
-			</li>
-		</ul>
-	</nav>
-</header>
+<?php get_header(); ?>
 <!-- /header -->
 <!-- main -->
 <main class="main cntInner inner">
@@ -54,7 +14,7 @@
 	<!-- top -->
 	<section>
 		<div class="top__img">
-			<img src="../assets/img/blog/00.jpg" alt="キービジュアル">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/00.jpg" alt="キービジュアル">
 		</div>
 	</section>
 	<!-- /top -->
@@ -72,7 +32,7 @@
 			<div class="blog__wrapper">
 				<h2 class="blog__subTtl">プレゼントキャンペーンも実施中♪</h2>
 				<div class="blog__wrapper__img">
-					<img src="../assets/img/blogDetail/InsertImage01.jpg" alt="blog中の画像">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blogDetail/InsertImage01.jpg" alt="blog中の画像">
 				</div>
 				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
 				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
@@ -84,7 +44,7 @@
 			</div>
 			<div class="storeInfo">
 				<div class="storeInfo__img">
-					<img src="../assets/img/shop/sinjyuku.jpg" alt="新宿店">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/shop/sinjyuku.jpg" alt="新宿店">
 				</div>
 				<div class="storeInfo__content">
 					<h3 class="storeInfo__ttl">新宿店</h3>
@@ -112,28 +72,28 @@
 				<div class="newBlog__wrapper">
 					<div class="newBlog__card">
 						<div class="newBlog__img">
-							<img src="../assets/img/blog/01.jpg" alt="ねこ">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
 						</div>
 						<div class="newBlog__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</div>
 						<span class="date newBlog__date">2022.02.22</span>
 					</div>
 					<div class="newBlog__card">
 						<div class="newBlog__img">
-							<img src="../assets/img/blog/02.jpg" alt="ねこ">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
 						</div>
 						<div class="newBlog__ttl">ポイント2倍Day！この機会をお見逃しなく！</div>
 						<span class="date newBlog__date">2022.02.22</span>
 					</div>
 					<div class="newBlog__card">
 						<div class="newBlog__img">
-							<img src="../assets/img/blog/03.jpg" alt="ねこ">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/03.jpg" alt="ねこ">
 						</div>
 						<div class="newBlog__ttl">新年SEAL！療法食10%OFF</div>
 						<span class="date newBlog__date">2022.02.22</span>
 					</div>
 					<div class="newBlog__card">
 						<div class="newBlog__img">
-							<img src="../assets/img/blog/04.jpg" alt="ねこ">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/04.jpg" alt="ねこ">
 						</div>
 						<div class="newBlog__ttl">新入りさん紹介★穏やかで甘え上手なスコティッシュフォールド</div>
 						<span class="date newBlog__date">2022.02.22</span>
@@ -147,21 +107,21 @@
 				<h3 class="pickup__topTtl">ピックアップ</h3>
 				<a href="#" class="pickup__card">
 					<div class="pickup__img">
-						<img src="../assets/img/blog/01.jpg" alt="ねこ">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
 					</div>
 					<div class="pickup__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</div>
 					<span class="date pickup__date">2022.02.22</span>
 				</a>
 				<a href="#" class="pickup__card">
 					<div class="pickup__img">
-						<img src="../assets/img/blog/02.jpg" alt="ねこ">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
 					</div>
 					<div class="pickup__ttl">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</div>
 					<span class="date pickup__date">2022.02.22</span>
 				</a>
 				<a href="#" class="pickup__card">
 					<div class="pickup__img">
-						<img src="../assets/img/blog/03.jpg" alt="ねこ">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/03.jpg" alt="ねこ">
 					</div>
 					<div class="pickup__ttl">新年SEAL！療法食10%OFF</div>
 					<span class="date pickup__date">2022.01.04</span>
@@ -186,31 +146,7 @@
 </main>
 <!-- /main -->
 <!-- footer -->
-<footer class="footer">
-	<div class="footer__inner inner">
-		<div class="footer__wrap">
-			<div class="footer__logo">
-				<img src="../assets/img/home/logo.svg" alt="CAT BELLロゴ画像">
-			</div>
-			<nav class="footer__nav">
-				<ul class="footer__list">
-					<li class="footer__item">
-						<a href="">ペットを探す</a>
-					</li>
-					<li class="footer__item">
-						<a href="">お店を探す</a>
-					</li>
-					<li class="footer__item">
-						<a href="">ブログ一覧</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<p class="footer__copyRight">&copy; 2020-2022 CAT BELL Co., Ltd.</p>
-	</div>
-</footer>
+<?php get_footer(); ?>
 <!-- /footer -->
-<!-- WordPress用テンプレートタグ -->
-<!-- <?php wp_footer(); ?> -->
 </body>
 </html>
