@@ -10,36 +10,41 @@
 	</nav>
 	<!-- /パンくずリスト -->
 	<!-- top -->
+	<?php if (have_posts()) : ?>
 	<section>
 		<div class="top__img">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/00.jpg" alt="キービジュアル">
+			<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 		</div>
 		<div class="top__content">
-			<h2 class="top__ttl">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪</h2>
-			<p class="top__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
+			<h2 class="top__ttl"><?php echo the_title(); ?></h2>
+			<div class="top__txt"><?php echo the_content(); ?></div>
 			<div class="top__tagItems">
 				<a href="#" class="tag top__tag">#ヘルスケア</a>
 				<a href="#" class="tag top__tag">#プレゼント</a>
 				<a href="#" class="tag top__tag">#キャンペーン</a>
 			</div>
-			<span class="date top__date">2022.02.24</span>
+			<span class="date top__date"><?php echo the_time('Y.m.d'); ?></span>
 		</div>
 	</section>
+	<?php endif; ?>
 	<!-- /top -->
 	<!-- content -->
 	<section class="content">
 		<div class="archive">
 			<div class="archive__wrap">
+				<?php if (have_posts()) : ?>
+				<?php while (have_posts()) : the_post(); ?>
+				<?php if (!is_first()) : ?>
 				<div class="archive__card">
 					<a href="#" class="archive__cardLink">
 						<div class="archive__cardWrap">
 							<div class="archive__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
+							<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 							</div>
 							<div class="archive__content">
-								<span class="date">2022.02.22</span>
-								<div class="archive__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されてください！</div>
-								<p class="archive__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあが、あらゆる物事と実際に接点を持つことは非常に大切です.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+								<span class="date"><?php echo the_time('Y.m.d'); ?></span>
+								<div class="archive__ttl"><?php echo the_title(); ?></div>
+								<div class="archive__txt"><?php echo the_content(); ?></div>
 							</div>
 						</div>
 					</a>
@@ -48,96 +53,8 @@
 						<a href="#" class="tag archive__tag">#ヘルスケア</a>
 					</div>
 				</div>
-				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
-						<div class="archive__cardWrap">
-							<div class="archive__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
-							</div>
-							<div class="archive__content">
-								<span class="date">2022.02.22</span>
-								<div class="archive__ttl">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</div>
-								<p class="archive__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあが、あらゆる物事と実際に接点を持…</p>
-							</div>
-						</div>
-					</a>
-					<div class="archive__tagItems">
-						<a href="#" class="tag archive__tag">#ポイントDay</a>
-						<a href="#" class="tag archive__tag">#ヘルスケア</a>
-					</div>
-				</div>
-				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
-						<div class="archive__cardWrap">
-							<div class="archive__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/03.jpg" alt="ねこ">
-							</div>
-							<div class="archive__content">
-								<span class="date">2022.01.04</span>
-								<div class="archive__ttl">新年SEAL！療法食10%OFF</div>
-								<p class="archive__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。</p>
-							</div>
-						</div>
-					</a>
-					<div class="archive__tagItems">
-						<a href="#" class="tag archive__tag">#プレゼント</a>
-						<a href="#" class="tag archive__tag">#ヘルスケア</a>
-						<a href="#" class="tag archive__tag">#ごはん</a>
-					</div>
-				</div>
-				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
-						<div class="archive__cardWrap">
-							<div class="archive__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/04.jpg" alt="ねこ">
-							</div>
-							<div class="archive__content">
-								<span class="date">2021.12.20</span>
-								<div class="archive__ttl">新入りさん紹介★穏やかで甘え上手なスコティッシュフォールド</div>
-								<p class="archive__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあが、あらゆる物事と実際に接点を持…</p>
-							</div>
-						</div>
-					</a>
-					<div class="archive__tagItems">
-						<a href="#" class="tag archive__tag">#新入りさん</a>
-					</div>
-				</div>
-				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
-						<div class="archive__cardWrap">
-							<div class="archive__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
-							</div>
-							<div class="archive__content">
-								<span class="date">2022.02.22</span>
-								<div class="archive__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒…</div>
-								<p class="archive__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあが、あらゆる物事と実際に接点を持…</p>
-							</div>
-						</div>
-					</a>
-					<div class="archive__tagItems">
-						<a href="#" class="tag archive__tag">#キャンペーン</a>
-						<a href="#" class="tag archive__tag">#ヘルスケア</a>
-					</div>
-				</div>
-				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
-						<div class="archive__cardWrap">
-							<div class="archive__img">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
-							</div>
-							<div class="archive__content">
-								<span class="date">2022.02.22</span>
-								<div class="archive__ttl">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</div>
-								<p class="archive__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあが、あらゆる物事と実際に接点を持…</p>
-							</div>
-						</div>
-					</a>
-					<div class="archive__tagItems">
-						<a href="#" class="tag archive__tag">#ポイントDay</a>
-						<a href="#" class="tag archive__tag">#ヘルスケア</a>
-					</div>
-				</div>
+				<?php endif; ?>
+				<?php endwhile; endif; ?>
 			</div>
 			<div class="pager">
 				<ul class="pager__items">
