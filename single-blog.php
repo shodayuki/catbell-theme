@@ -92,45 +92,7 @@
 				<a href="#" class="newBlog__link link__btn"><span class="link__content newBlog__link--cnt">この店舗のブログを見る</span></a>
 			</div>
     </div>
-		<div class="side">
-			<div class="pickup">
-				<h3 class="pickup__topTtl">ピックアップ</h3>
-				<a href="#" class="pickup__card">
-					<div class="pickup__img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
-					</div>
-					<div class="pickup__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</div>
-					<span class="date pickup__date">2022.02.22</span>
-				</a>
-				<a href="#" class="pickup__card">
-					<div class="pickup__img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
-					</div>
-					<div class="pickup__ttl">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</div>
-					<span class="date pickup__date">2022.02.22</span>
-				</a>
-				<a href="#" class="pickup__card">
-					<div class="pickup__img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/03.jpg" alt="ねこ">
-					</div>
-					<div class="pickup__ttl">新年SEAL！療法食10%OFF</div>
-					<span class="date pickup__date">2022.01.04</span>
-				</a>
-			</div>
-			<div class="keyword">
-				<h3 class="keyword__topTtl">キーワード</h3>
-				<ul class="keyword__tagItems">
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#ヘルスケア</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#新入りさん</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#里親募集</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#キャンペーン</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#プレゼント</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#ポイントDay</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#ごはん</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#おやつ</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php get_template_part('_inc/sidebar'); ?>
 	</section>
 	<!-- /content -->
 </main>

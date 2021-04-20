@@ -63,44 +63,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="side">
-			<div class="pickup">
-				<h3 class="pickup__topTtl">ピックアップ</h3>
-				<a href="#" class="pickup__card">
-					<div class="pickup__img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
-					</div>
-					<div class="pickup__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</div>
-					<span class="date pickup__date">2022.02.22</span>
-				</a>
-				<a href="#" class="pickup__card">
-					<div class="pickup__img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
-					</div>
-					<div class="pickup__ttl">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</div>
-					<span class="date pickup__date">2022.02.22</span>
-				</a>
-				<a href="#" class="pickup__card">
-					<div class="pickup__img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/03.jpg" alt="ねこ">
-					</div>
-					<div class="pickup__ttl">新年SEAL！療法食10%OFF</div>
-					<span class="date pickup__date">2022.01.04</span>
-				</a>
-			</div>
-			<div class="keyword">
-				<h3 class="keyword__topTtl">キーワード</h3>
-				<ul class="keyword__tagItems">
-					<?php
-						$posttags = get_tags();
-						if ($posttags) :
-						foreach($posttags as $tag) :
-					?>
-					<li class="keyword__tagItem"><a href="<?php echo get_tag_link($tag->term_id); ?>" class="tag keyword__tag"><?php echo $tag->name ?></a></li>
-					<?php endforeach; endif; ?>
-				</ul>
-			</div>
-		</div>
+		<?php get_template_part('_inc/sidebar'); ?>
 	</section>
 <!-- /content -->
 </main>
