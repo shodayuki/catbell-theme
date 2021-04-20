@@ -15,39 +15,37 @@
 			</div>
 		</div>
 		<!-- /.mainVisual -->
+		<?php
+			$args = array(
+				'post_type' => 'news', // ポストタイプのスラッグ
+				'order' => 'DESC',
+				'posts_per_page' => 4
+			);
+			$my_query = new WP_Query($args);
+			if ($my_query->have_posts()) :
+		?>
 		<div class="news">
 			<div class="news__inner inner">
 				<div class="news__wrap">
 					<div class="news__heading">お知らせ</div>
 					<ul class="news__list">
+						<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 						<li class="news__item">
-							<div class="news__date">2022.02.24</div>
+							<div class="news__date"><?php echo get_field('news_date') ?></div>
 							<div class="news__title">
-								<a href="#" class="news__link">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪</a>
+								<?php if (get_field('news_link')) : ?>
+								<a href="<?php echo get_field('news_link'); ?>" class="news__link"><?php echo the_title(); ?></a>
+								<?php else : ?>
+								<p><?php echo the_title(); ?></p>
+								<?php endif; ?>
 							</div>
 						</li>
-						<li class="news__item">
-							<div class="news__date">2022.02.22</div>
-							<div class="news__title">
-								<a href="#" class="news__link">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</a>
-							</div>
-						</li>
-						<li class="news__item">
-							<div class="news__date">2022.02.02</div>
-							<div class="news__title">
-								<a href="#" class="news__link">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</a>
-							</div>
-						</li>
-						<li class="news__item">
-							<div class="news__date">2022.01.04</div>
-							<div class="news__title">
-								<a href="#" class="news__link">新年SEAL！療法食10%OFF&ペットアイテムおまとめ買いでプレゼント</a>
-							</div>
-						</li>
+						<?php endwhile; ?>
 					</ul>
 				</div>
 			</div>
 		</div>
+		<?php endif; ?>
 		<!-- /.news -->
 		<section class="findPets">
 			<div class="findPet__inner inner">
