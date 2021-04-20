@@ -30,9 +30,7 @@
 				<?php echo the_content(); ?>
 			</div>
 			<div class="blog__tagItems">
-				<a href="#" class="tag blog__tag">#ヘルスケア</a>
-				<a href="#" class="tag blog__tag">#プレゼント</a>
-				<a href="#" class="tag blog__tag">#キャンペーン</a>
+				<?php the_tags('<div class="tag top__tag">','</div><div class="tag top__tag">','</div>'); ?>
 			</div>
 			<div class="storeInfo">
 				<div class="storeInfo__img">

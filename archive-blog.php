@@ -11,7 +11,7 @@
 	<!-- /パンくずリスト -->
 	<!-- top -->
 	<?php if (have_posts()) : ?>
-	<section>
+	<a href="<?php the_permalink(); ?>">
 		<div class="top__img">
 			<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 		</div>
@@ -19,13 +19,11 @@
 			<h2 class="top__ttl"><?php echo the_title(); ?></h2>
 			<div class="top__txt"><?php echo the_content(); ?></div>
 			<div class="top__tagItems">
-				<a href="#" class="tag top__tag">#ヘルスケア</a>
-				<a href="#" class="tag top__tag">#プレゼント</a>
-				<a href="#" class="tag top__tag">#キャンペーン</a>
+				<?php the_tags('<div class="tag top__tag">','</div><div class="tag top__tag">','</div>'); ?>
 			</div>
 			<span class="date top__date"><?php echo the_time('Y.m.d'); ?></span>
 		</div>
-	</section>
+	</a>
 	<?php endif; ?>
 	<!-- /top -->
 	<!-- content -->
@@ -36,10 +34,10 @@
 				<?php while (have_posts()) : the_post(); ?>
 				<?php if (!is_first()) : ?>
 				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
+					<a href="<?php the_permalink(); ?>" class="archive__cardLink">
 						<div class="archive__cardWrap">
 							<div class="archive__img">
-							<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
+								<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 							</div>
 							<div class="archive__content">
 								<span class="date"><?php echo the_time('Y.m.d'); ?></span>
@@ -49,8 +47,7 @@
 						</div>
 					</a>
 					<div class="archive__tagItems">
-						<a href="#" class="tag archive__tag">#キャンペーン</a>
-						<a href="#" class="tag archive__tag">#ヘルスケア</a>
+						<?php the_tags('<div class="tag top__tag">','</div><div class="tag top__tag">','</div>'); ?>
 					</div>
 				</div>
 				<?php endif; ?>
