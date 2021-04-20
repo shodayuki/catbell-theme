@@ -28,7 +28,7 @@
 					while ($my_query->have_posts()) : $my_query->the_post();
 				?>
 				<div class="archive__card">
-					<a href="#" class="archive__cardLink">
+					<a href="<?php the_permalink(); ?>" class="archive__cardLink">
 						<div class="archive__cardWrap">
 							<div class="archive__img">
 								<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
