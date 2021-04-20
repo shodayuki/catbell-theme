@@ -91,14 +91,13 @@
 			<div class="keyword">
 				<h3 class="keyword__topTtl">キーワード</h3>
 				<ul class="keyword__tagItems">
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#ヘルスケア</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#新入りさん</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#里親募集</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#キャンペーン</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#プレゼント</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#ポイントDay</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#ごはん</a></li>
-					<li class="keyword__tagItem"><a href="#" class="tag keyword__tag">#おやつ</a></li>
+					<?php
+						$posttags = get_tags();
+						if ($posttags) :
+						foreach($posttags as $tag) :
+					?>
+					<li class="keyword__tagItem"><a href="<?php echo get_tag_link($tag->term_id); ?>" class="tag keyword__tag"><?php echo $tag->name ?></a></li>
+					<?php endforeach; endif; ?>
 				</ul>
 			</div>
 		</div>
