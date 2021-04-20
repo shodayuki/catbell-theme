@@ -11,31 +11,23 @@
 		</ol>
 	</nav>
 	<!-- /パンくずリスト -->
+
+
+
 	<!-- top -->
 	<section>
 		<div class="top__img">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/00.jpg" alt="キービジュアル">
+			<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 		</div>
 	</section>
 	<!-- /top -->
   <!-- content -->
   <section class="content">
     <div class="blogs">
-			<span class="date">2022.02.22</span>
-			<h1 class="blog__ttl">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪</h1>
+			<span class="date"><?php echo the_time('Y.m.d'); ?></span>
+			<h1 class="blog__ttl"><?php echo the_title(); ?></h1>
 			<div class="blog__wrapper">
-				<h2 class="blog__subTtl">猫にまつわるヒーリング効果とは！？</h2>
-				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
-				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
-				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
-			</div>
-			<div class="blog__wrapper">
-				<h2 class="blog__subTtl">プレゼントキャンペーンも実施中♪</h2>
-				<div class="blog__wrapper__img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blogDetail/InsertImage01.jpg" alt="blog中の画像">
-				</div>
-				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
-				<p class="blog__txt">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。</p>
+				<?php echo the_content(); ?>
 			</div>
 			<div class="blog__tagItems">
 				<a href="#" class="tag blog__tag">#ヘルスケア</a>
