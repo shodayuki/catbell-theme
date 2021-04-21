@@ -1,43 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>CAT BELL | ペットを探す</title>
-	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/common.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
-	<script src="../assets/js/script.js"></script>
-</head>
-<body class="drawer drawer--right">
-<header class="header header--default js-header">
-	<div class="header__logo">
-		<img src="../assets/img/home/logo.svg" alt="CAT BELLロゴ画像">
-	</div>
-	<button type="button" class="drawer-toggle drawer-hamburger">
-		<span class="drawer-hamburger-icon"></span>
-	</button>
-	<nav class="header__nav drawer-nav" role="navigation">
-		<ul class="header__list drawer-menu">
-			<li class="header__item">
-				<a href="#" class="drawer-menu-item">ペットを探す</a>
-			</li>
-			<li class="header__item">
-				<a href="#" class="drawer-menu-item">お店を探す</a>
-			</li>
-			<li class="header__item">
-				<a href="#" class="drawer-menu-item">ブログ一覧</a>
-			</li>
-		</ul>
-	</nav>
-</header>
+<?php get_header(); ?>
 <section class="findPet">
 	<div class="findPet__inner inner">
 		<!-- breadcrumb -->
@@ -57,7 +18,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/01.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/01.png" alt="">
 						</div>
 						<p class="findPet__catName">スコティッシュ<br>フォールド</p>
 					</a>
@@ -65,7 +26,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/02.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/02.png" alt="">
 						</div>
 						<p class="findPet__catName">アメリカン<br>ショートヘア</p>
 					</a>
@@ -73,7 +34,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/03.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/03.png" alt="">
 						</div>
 						<p class="findPet__catName">メインクイーン</p>
 					</a>
@@ -81,7 +42,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/04.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/04.png" alt="">
 						</div>
 						<p class="findPet__catName">エキゾチック<br>ショートヘア</p>
 					</a>
@@ -89,7 +50,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/05.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/05.png" alt="">
 						</div>
 						<p class="findPet__catName">ラグドール</p>
 					</a>
@@ -97,7 +58,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/06.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/06.png" alt="">
 						</div>
 						<p class="findPet__catName">ブリティッシュ<br>ショートヘア</p>
 					</a>
@@ -105,7 +66,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/07.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/07.png" alt="">
 						</div>
 						<p class="findPet__catName">マンチカン</p>
 					</a>
@@ -113,7 +74,7 @@
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="../assets/img/typeList/4columns/08.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/08.png" alt="">
 						</div>
 						<p class="findPet__catName">サイベリアン</p>
 					</a>
@@ -121,7 +82,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/01.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/01.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ノルウェージャンフォレストキャット</p>
 					</a>
@@ -129,7 +90,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/02.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/02.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ミヌエット</p>
 					</a>
@@ -137,7 +98,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/03.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/03.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ロシアンブルー</p>
 					</a>
@@ -145,7 +106,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/04.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/04.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">シャルトリュー</p>
 					</a>
@@ -153,7 +114,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/01.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/01.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ノルウェージャン<br class="is-tab">フォレストキャット</p>
 					</a>
@@ -161,7 +122,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/02.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/02.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ミヌエット</p>
 					</a>
@@ -169,7 +130,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/03.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/03.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ロシアンブルー</p>
 					</a>
@@ -177,7 +138,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/04.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/04.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">シャルトリュー</p>
 					</a>
@@ -185,7 +146,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/01.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/01.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ノルウェージャンフォレストキャット</p>
 					</a>
@@ -193,7 +154,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/02.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/02.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ミヌエット</p>
 					</a>
@@ -201,7 +162,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/03.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/03.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">ロシアンブルー</p>
 					</a>
@@ -209,7 +170,7 @@
 				<li class="findPet__item--sub">
 					<a href="#" class="findPet__itemLinkSub">
 						<div class="findPet__catImg--sub">
-							<img src="../assets/img/typeList/3columns/04.png" alt="">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/04.png" alt="">
 						</div>
 						<p class="findPet__catName--sub">シャルトリュー</p>
 					</a>
@@ -222,28 +183,6 @@
 	</div>
 </section>
 <!-- /.findPet -->
-<footer class="footer">
-	<div class="footer__inner inner">
-		<div class="footer__wrap">
-			<div class="footer__logo">
-				<img src="../assets/img/home/logo.svg" alt="CAT BELLロゴ画像">
-			</div>
-			<nav class="footer__nav">
-				<ul class="footer__list">
-					<li class="footer__item">
-						<a href="">ペットを探す</a>
-					</li>
-					<li class="footer__item">
-						<a href="">お店を探す</a>
-					</li>
-					<li class="footer__item">
-						<a href="">ブログ一覧</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-		<p class="footer__copyRight">&copy; 2020-2022 CAT BELL Co., Ltd.</p>
-	</div>
-</footer>
+<?php get_footer(); ?>
 </body>
 </html>
