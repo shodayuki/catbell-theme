@@ -10,7 +10,7 @@
         </ol>
       </nav>
       <!-- breadcrumb__inner inner -->
-      <img src="../assets/img/shopDetail/sinjyuku.jpg" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/sinjyuku.jpg" alt="">
     </div>
   </div><!-- mainvisual -->
   <section class="access">
@@ -48,7 +48,7 @@
       <ul class="catlist__items">
         <li class="catlist__item">
           <a href="#">
-            <img src="../assets/img/shopDetail/americanShorthair_01.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/americanShorthair_01.jpg" alt="">
             <h3 class="catlist__item__title">アメリカンショートヘア</h3>
             <dl>
               <dt>性別</dt>
@@ -60,7 +60,7 @@
         </li><!-- catlist__item 1-->
         <li class="catlist__item">
           <a href="#">
-            <img src="../assets/img/shopDetail/siam.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/siam.jpg" alt="">
             <h3 class="catlist__item__title">シャム</h3>
             <dl>
               <dt>性別</dt>
@@ -72,7 +72,7 @@
         </li><!-- catlist__item 2-->
         <li class="catlist__item">
           <a href="#">
-            <img src="../assets/img/shopDetail/munchkin.jpeg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/munchkin.jpeg" alt="">
             <h3 class="catlist__item__title">マンチカン</h3>
             <dl>
               <dt>性別</dt>
@@ -93,7 +93,7 @@
       <h2 class="section__title">店長よりごあいさつ</h2>
       <div class="concept__inner">
         <div class="concept__left">
-          <img src="../assets/img/shopDetail/greeting.jpg" alt="">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/greeting.jpg" alt="">
         </div><!-- concept__left -->
         <div class="concept__right">
           <h3 class="concept__subtitle">お客様との出会いとその後の関係をより深めるサポート</h3>
@@ -109,7 +109,7 @@
       <ul class="blog__items">
         <li class="blog__item">
           <a href="#">
-            <img src="../assets/img/shopDetail/00.jpg" alt="ブログ記事写真">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/00.jpg" alt="ブログ記事写真">
             <div class="blog__item__text">
               <p class="date">2022.02.24</p>
               <h3 class="blog__subtitle">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！</h3>
@@ -122,7 +122,7 @@
         </li><!-- blog__item -->
         <li class="blog__item">
           <a href="#">
-            <img src="../assets/img/shopDetail/01.jpg" alt="ブログ記事写真">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/01.jpg" alt="ブログ記事写真">
             <div class="blog__item__text">
               <p class="date">2022.02.24</p>
               <h3 class="blog__subtitle">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</h3>
@@ -134,7 +134,7 @@
         </li><!-- blog__item -->
         <li class="blog__item">
           <a href="#">
-            <img src="../assets/img/shopDetail/02.jpg" alt="ブログ記事写真">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/02.jpg" alt="ブログ記事写真">
             <div class="blog__item__text">
               <p class="date">2022.02.24</p>
               <h3 class="blog__subtitle">【新宿店】ポイント2倍Day！この機会をお見逃しなく！ポイント2倍Day！この機会をお見逃しなく！ポイント2倍Day！この機会をお見逃しなく！</h3>
