@@ -148,12 +148,8 @@
   </div>
 </section>
 <?php get_footer(); ?>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- slick -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js"></script>
-<!-- original -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/script.js"></script>
 <script>
   $(".your-class").slick({
       slidesToShow: 1,
