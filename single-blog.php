@@ -32,31 +32,36 @@
 			<div class="blog__tagItems">
 				<?php the_tags('<div class="tag top__tag">','</div><div class="tag top__tag">','</div>'); ?>
 			</div>
+
+			<?php
+				$post_object = get_field('blog_shop');
+				$image = get_post_meta($post_object, 'shop_img', true);
+				$size = 'full';
+			?>
 			<div class="storeInfo">
 				<div class="storeInfo__img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/shop/sinjyuku.jpg" alt="新宿店">
+					<?php echo wp_get_attachment_image($image, $size); ?>
 				</div>
 				<div class="storeInfo__content">
-					<h3 class="storeInfo__ttl">新宿店</h3>
+					<h3 class="storeInfo__ttl"><?php echo get_the_title($post_object); ?></h3>
 					<table class="storeInfo__tbl">
 						<tr class="storeInfo__items">
 							<td class="storeInfo__label">住所</td>
-							<td class="storeInfo__cnt">東京都新宿区西新宿2-22-2キャットベル</td>
+							<td class="storeInfo__cnt"><?php echo get_post_meta($post_object, 'shop_address', true); ?></td>
 						</tr>
 						<tr class="storeInfo__items">
 							<td class="storeInfo__label">TEL</td>
-							<td class="storeInfo__cnt">22-2222-2222</td>
+							<td class="storeInfo__cnt"><?php echo get_post_meta($post_object, 'shop_tel', true); ?></td>
 						</tr>
 						<tr class="storeInfo__items">
 							<td class="storeInfo__label">営業時間</td>
-							<td class="storeInfo__cnt">平日11：00～19:30/土日祝11:00～20：00<br>
-								休日：年中無休
-							</td>
+							<td class="storeInfo__cnt"><?php echo get_post_meta($post_object, 'shop_hours', true); ?></td>
 						</tr>
 					</table>
 				</div>
-				<a href="#" class="storeInfo__link link__btn"><span class="link__content">お取扱い店舗を見る</span></a>
+				<a href="<?php echo get_permalink($post_object); ?>" class="storeInfo__link link__btn"><span class="link__content">お取扱い店舗を見る</span></a>
 			</div>
+
 			<div class="newBlog">
 				<h3 class="newBlog__ttl">新宿店の最新ブログ</h3>
 				<div class="newBlog__wrapper">
