@@ -26,6 +26,7 @@
     </li><!-- shoplist__item1-->
     <?php endwhile; endif; ?>
   </ul><!-- shoplist__items-->
+  <?php get_template_part('_inc/pager'); ?>
 </section><!-- shoplist-->
 <?php get_footer(); ?>
 </body>
