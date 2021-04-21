@@ -53,15 +53,7 @@
 				<?php endif; ?>
 				<?php endwhile; endif; ?>
 			</div>
-			<div class="pager">
-				<ul class="pager__items">
-					<li class="pager__item is-active"><a href="#" class="pager__link">1</a></li>
-					<li class="pager__item"><a href="#" class="pager__link">2</a></li>
-					<li class="pager__item"><a href="#" class="pager__link">3</a></li>
-					<li class="pager__item"><a href="#" class="pager__link">4</a></li>
-					<li class="pager__item"><a href="#" class="pager__link">5</a></li>
-				</ul>
-			</div>
+			<?php get_template_part('_inc/pager'); ?>
 		</div>
 		<?php get_template_part('_inc/sidebar'); ?>
 	</section>
