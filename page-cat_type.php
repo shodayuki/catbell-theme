@@ -15,170 +15,33 @@
 		</div>
 		<div class="findPet__wrap">
 			<ul class="findPet__list">
+
+				<?php
+					$taxonomy_name = 'cat_type';
+					$taxonomys = get_terms($taxonomy_name);
+
+					if (!is_wp_error($taxonomys) && count($taxonomys)) :
+					foreach($taxonomys as $taxonomy) :
+
+					$term_id = esc_html($taxonomy->term_id);
+					$term_idsp = "cat_type_".$term_id; // タクソノミーの名前_ + term_id
+					$photo = get_field('cat_type_img', $term_idsp);
+				?>
+
 				<li class="findPet__item">
 					<a href="#" class="findPet__itemLink">
 						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/01.png" alt="">
+							<img src="<?php echo $photo ?>" alt="<?php echo esc_html($taxonomy->name); ?>">
 						</div>
-						<p class="findPet__catName">スコティッシュ<br>フォールド</p>
+						<p class="findPet__catName"><?php echo esc_html($taxonomy->name); ?></p>
 					</a>
 				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/02.png" alt="">
-						</div>
-						<p class="findPet__catName">アメリカン<br>ショートヘア</p>
-					</a>
-				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/03.png" alt="">
-						</div>
-						<p class="findPet__catName">メインクイーン</p>
-					</a>
-				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/04.png" alt="">
-						</div>
-						<p class="findPet__catName">エキゾチック<br>ショートヘア</p>
-					</a>
-				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/05.png" alt="">
-						</div>
-						<p class="findPet__catName">ラグドール</p>
-					</a>
-				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/06.png" alt="">
-						</div>
-						<p class="findPet__catName">ブリティッシュ<br>ショートヘア</p>
-					</a>
-				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/07.png" alt="">
-						</div>
-						<p class="findPet__catName">マンチカン</p>
-					</a>
-				</li>
-				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
-						<div class="findPet__catImg">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/08.png" alt="">
-						</div>
-						<p class="findPet__catName">サイベリアン</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/01.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ノルウェージャンフォレストキャット</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/02.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ミヌエット</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/03.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ロシアンブルー</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/04.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">シャルトリュー</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/01.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ノルウェージャン<br class="is-tab">フォレストキャット</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/02.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ミヌエット</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/03.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ロシアンブルー</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/04.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">シャルトリュー</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/01.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ノルウェージャンフォレストキャット</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/02.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ミヌエット</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/03.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">ロシアンブルー</p>
-					</a>
-				</li>
-				<li class="findPet__item--sub">
-					<a href="#" class="findPet__itemLinkSub">
-						<div class="findPet__catImg--sub">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/3columns/04.png" alt="">
-						</div>
-						<p class="findPet__catName--sub">シャルトリュー</p>
-					</a>
-				</li>
+
+				<?php endforeach; endif; ?>
 			</ul>
 		</div>
 		<div class="findPet__more">
-			<a href="#" class="util__link">すべての猫種一覧を見る</a>
+			<a href="<?php echo get_post_type_archive_link('cat'); ?>" class="util__link">すべての猫一覧を見る</a>
 		</div>
 	</div>
 </section>
