@@ -24,7 +24,7 @@
 					foreach($taxonomys as $taxonomy) :
 
 					$term_id = esc_html($taxonomy->term_id);
-					$term_idsp = "cat_type_".$term_id; // タクソノミーの名前_ + term_id
+					$term_idsp = "cat_type_".$term_id;
 					$photo = get_field('cat_type_img', $term_idsp);
 				?>
 
