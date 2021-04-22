@@ -64,8 +64,11 @@
 				<div class="newBlog__wrapper">
 					<?php
 						$taxonomy = 'input_shop_type';
-						$term_slug = $post->post_name;
-
+						$terms = get_the_terms($post->ID, $taxonomy);
+						$terms_slug = "";
+						foreach ($terms as $term) {
+							$term_slug = $term->slug;
+						}
 						$args = array(
 							'tax_query' => array(
 								array(
@@ -92,7 +95,7 @@
 					</div>
 					<?php endwhile; endif; wp_reset_postdata(); ?>
 				</div>
-				<a href="#" class="newBlog__link link__btn">
+				<a href="<?php echo get_term_link($term_slug, $taxonomy); ?>" class="newBlog__link link__btn">
 					<span class="link__content newBlog__link--cnt">この店舗のブログを見る</span>
 				</a>
 			</div>
