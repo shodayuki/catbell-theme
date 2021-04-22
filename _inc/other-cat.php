@@ -2,38 +2,38 @@
   <div class="anotherPet__inner">
     <h3 class="catList__title">ほかにもこんな猫種が注目されています！</h3>
     <ul class="anotherPet__list">
+
+      <?php
+        $countUp = 0;
+        $taxonomy_name = 'cat_type';
+        $taxonomys = get_terms($taxonomy_name);
+
+        if (!is_wp_error($taxonomys) && count($taxonomys)) :
+
+          foreach($taxonomys as $taxonomy) :
+            $term_id = esc_html($taxonomy->term_id);
+            $term_idsp = "cat_type_".$term_id;
+            $photo = get_field('cat_type_img', $term_idsp);
+
+            if ($coutnUp < 4) {
+              $terms = get_the_terms($post->ID, 'cat_type');
+              foreach ($terms as $term) {
+                $term_link = get_term_link($term);
+
+            if (esc_html($taxonomy->name === $term->name)) {
+              $countUp--;
+            } else {
+      ?>
       <li class="anotherPet__item hover">
-        <a href="anotherPet__itemLink">
+        <a href="<?php echo get_permalink(get_page_by_path('cat_type')->ID); ?><?php echo esc_html($taxonomy->slug); ?>" class="anotherPet__itemLink">
           <div class="anotherPet__catImg">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/01.png" alt="">
+            <img src="<?php echo $photo ?>" alt="<?php echo esc_html($taxonomy->name); ?>">
           </div>
-          <p class="anotherPet__catName">スコティッシュ<br>フォールド</p>
+          <p class="anotherPet__catName"><?php echo esc_html($taxonomy->name); ?></p>
         </a>
       </li>
-      <li class="anotherPet__item hover">
-        <a href="anotherPet__itemLink">
-          <div class="anotherPet__catImg">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/03.png" alt="">
-          </div>
-          <p class="anotherPet__catName">メインクイーン</p>
-        </a>
-      </li>
-      <li class="anotherPet__item hover">
-        <a href="anotherPet__itemLink">
-          <div class="anotherPet__catImg">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/04.png" alt="">
-          </div>
-          <p class="anotherPet__catName">エキゾチック<br>ショートヘア</p>
-        </a>
-      </li>
-      <li class="anotherPet__item hover">
-        <a href="anotherPet__itemLink">
-          <div class="anotherPet__catImg">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/typeList/4columns/05.png" alt="">
-          </div>
-          <p class="anotherPet__catName">ラグドール</p>
-        </a>
-      </li>
+      <?php }}} ?>
+      <?php  $countUp++; endforeach; endif; ?>
     </ul>
   </div>
 </div>

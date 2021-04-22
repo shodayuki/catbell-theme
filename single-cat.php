@@ -69,7 +69,13 @@
           </dd>
         </dl>
         <div class="single__cat__footer hover">
-          <a href="">アメリカンショートヘア一覧を見る<i class="fas fa-angle-right"></i></a>
+          <?php
+            $terms = get_the_terms($post->ID, 'cat_type');
+            foreach ($terms as $term) {
+              $term_link = get_term_link($term);
+          ?>
+          <a href="<?php echo $term_link; ?>"><?php echo $term->name; ?>一覧を見る<i class="fas fa-angle-right"></i></a>
+          <?php } ?>
         </div>
       </div>
     </div><!-- /single__cat -->

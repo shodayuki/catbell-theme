@@ -21,11 +21,10 @@
 					$taxonomys = get_terms($taxonomy_name);
 
 					if (!is_wp_error($taxonomys) && count($taxonomys)) :
-					foreach($taxonomys as $taxonomy) :
-
-					$term_id = esc_html($taxonomy->term_id);
-					$term_idsp = "cat_type_".$term_id;
-					$photo = get_field('cat_type_img', $term_idsp);
+						foreach($taxonomys as $taxonomy) :
+							$term_id = esc_html($taxonomy->term_id);
+							$term_idsp = "cat_type_".$term_id;
+							$photo = get_field('cat_type_img', $term_idsp);
 				?>
 
 				<li class="findPet__item">
