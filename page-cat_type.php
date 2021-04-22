@@ -29,7 +29,7 @@
 				?>
 
 				<li class="findPet__item">
-					<a href="#" class="findPet__itemLink">
+					<a href="<?php echo get_permalink(get_page_by_path('cat_type')->ID); ?><?php echo esc_html($taxonomy->slug); ?>" class="findPet__itemLink">
 						<div class="findPet__catImg">
 							<img src="<?php echo $photo ?>" alt="<?php echo esc_html($taxonomy->name); ?>">
 						</div>
