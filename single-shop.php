@@ -39,6 +39,27 @@
     <div class="inner">
       <h2 class="section__title"><?php echo the_title(); ?>の新入りの猫ちゃん</h2>
       <ul class="catlist__items">
+        <?php
+          $taxonomy = 'hand_shop_type';
+          $term_slug = $post->post_name;
+
+          $args = array(
+            'tax_query' => array(
+              array(
+                'taxonomy' => $taxonomy,
+                'field' => 'slug',
+                'terms' => $term_slug,
+              ),
+            ),
+            'post_type' => 'cat',
+            'order' => 'ASC',
+            'post_per_page' => 3,
+          );
+          $my_query = new WP_Query($args);
+
+          if ($my_query->have_posts()) :
+          while ($my_query->have_posts()) : $my_query->the_post();
+        ?>
         <li class="catlist__item">
           <a href="#">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/americanShorthair_01.jpg" alt="">
@@ -50,31 +71,10 @@
               <dd>368,800 (税抜)</dd>
             </dl>
           </a>
-        </li><!-- catlist__item 1-->
-        <li class="catlist__item">
-          <a href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/siam.jpg" alt="">
-            <h3 class="catlist__item__title">シャム</h3>
-            <dl>
-              <dt>性別</dt>
-              <dd>メス</dd>
-              <dt>生体価格</dt>
-              <dd>368,800 (税抜)</dd>
-            </dl>
-          </a>
-        </li><!-- catlist__item 2-->
-        <li class="catlist__item">
-          <a href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/munchkin.jpeg" alt="">
-            <h3 class="catlist__item__title">マンチカン</h3>
-            <dl>
-              <dt>性別</dt>
-              <dd>オス</dd>
-              <dt>生体価格</dt>
-              <dd>368,800 (税抜)</dd>
-            </dl>
-          </a>
-        </li><!-- catlist__item 3-->
+        </li>
+
+        <?php endwhile; endif; ?>
+
       </ul>
       <div class="btn">
         <a href="#" class="btn__item">この店舗の猫ちゃんを見る</a>
