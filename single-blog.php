@@ -11,9 +11,6 @@
 		</ol>
 	</nav>
 	<!-- /パンくずリスト -->
-
-
-
 	<!-- top -->
 	<section>
 		<div class="top__img">
@@ -63,47 +60,46 @@
 			</div>
 
 			<div class="newBlog">
-				<h3 class="newBlog__ttl">新宿店の最新ブログ</h3>
+				<h3 class="newBlog__ttl"><?php echo get_the_title($post_object); ?>の最新ブログ</h3>
 				<div class="newBlog__wrapper">
+					<?php
+						$taxonomy = 'input_shop_type';
+						$term_slug = $post->post_name;
+
+						$args = array(
+							'tax_query' => array(
+								array(
+									'taxonomy' => $taxonomy,
+									'field' => 'slug',
+									'terms' => $term_slug,
+								),
+							),
+							'post_type' => 'blog',
+							'order' => 'ASC',
+							'posts_per_page' => 4,
+						);
+						$my_query = new WP_Query($args);
+
+						if ($my_query->have_posts()) :
+						while ($my_query->have_posts()) : $my_query->the_post();
+					?>
 					<div class="newBlog__card">
 						<div class="newBlog__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/01.jpg" alt="ねこ">
+							<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 						</div>
-						<div class="newBlog__ttl">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</div>
-						<span class="date newBlog__date">2022.02.22</span>
+						<div class="newBlog__ttl"><?php echo the_title(); ?></div>
+						<span class="date newBlog__date"><?php echo the_time('Y.m.d'); ?></span>
 					</div>
-					<div class="newBlog__card">
-						<div class="newBlog__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/02.jpg" alt="ねこ">
-						</div>
-						<div class="newBlog__ttl">ポイント2倍Day！この機会をお見逃しなく！</div>
-						<span class="date newBlog__date">2022.02.22</span>
-					</div>
-					<div class="newBlog__card">
-						<div class="newBlog__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/03.jpg" alt="ねこ">
-						</div>
-						<div class="newBlog__ttl">新年SEAL！療法食10%OFF</div>
-						<span class="date newBlog__date">2022.02.22</span>
-					</div>
-					<div class="newBlog__card">
-						<div class="newBlog__img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/blog/04.jpg" alt="ねこ">
-						</div>
-						<div class="newBlog__ttl">新入りさん紹介★穏やかで甘え上手なスコティッシュフォールド</div>
-						<span class="date newBlog__date">2022.02.22</span>
-					</div>
+					<?php endwhile; endif; wp_reset_postdata(); ?>
 				</div>
-				<a href="#" class="newBlog__link link__btn"><span class="link__content newBlog__link--cnt">この店舗のブログを見る</span></a>
+				<a href="#" class="newBlog__link link__btn">
+					<span class="link__content newBlog__link--cnt">この店舗のブログを見る</span>
+				</a>
 			</div>
     </div>
 		<?php get_template_part('_inc/sidebar'); ?>
 	</section>
-	<!-- /content -->
 </main>
-<!-- /main -->
-<!-- footer -->
 <?php get_footer(); ?>
-<!-- /footer -->
 </body>
 </html>

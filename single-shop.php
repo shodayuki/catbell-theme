@@ -112,49 +112,49 @@
     <div class="inner">
       <h2 class="section__title"><?php echo the_title(); ?>の最新ブログ</h2>
       <ul class="blog__items">
+        <?php
+          $taxonomy = 'input_shop_type';
+          $term_slug = $post->post_name;
+
+          $args = array(
+            'tax_query' => array(
+              array(
+                'taxonomy' => $taxonomy,
+                'field' => 'slug',
+                'terms' => $term_slug,
+              ),
+            ),
+            'post_type' => 'blog',
+            'order' => 'ASC',
+            'posts_per_page' => 3,
+          );
+          $my_query = new WP_Query($args);
+
+          if ($my_query->have_posts()) :
+          while ($my_query->have_posts()) : $my_query->the_post();
+        ?>
         <li class="blog__item">
           <a href="#">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/00.jpg" alt="ブログ記事写真">
             <div class="blog__item__text">
-              <p class="date">2022.02.24</p>
-              <h3 class="blog__subtitle">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪猫にまつわるヒーリング効果とは！</h3>
-              <p class="blog__text">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか</p>
-              <a class="blog__item__link" href="#">#ヘルスケア</a>
-              <a class="blog__item__link" href="#">#プレゼント</a>
-              <a class="blog__item__link" href="#">#キャンペーン</a>
-            </div><!-- blog__item__text -->
+              <p class="date"><?php echo the_time('Y.m.d'); ?></p>
+              <h3 class="blog__subtitle"><?php echo the_title(); ?></h3>
+              <div class="blog__text">
+                <?php echo the_content(); ?>
+              </div>
+              <a class="blog__item__link">
+                <?php the_tags('<div class="tag top__tag">','</div><div class="tag top__tag">','</div>'); ?>
+              </a>
+            </div>
           </a>
-        </li><!-- blog__item -->
-        <li class="blog__item">
-          <a href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/01.jpg" alt="ブログ記事写真">
-            <div class="blog__item__text">
-              <p class="date">2022.02.24</p>
-              <h3 class="blog__subtitle">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</h3>
-              <p class="blog__text">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか</p>
-              <a class="blog__item__link" href="#">#ヘルスケア</a>
-              <a class="blog__item__link" href="#">#キャンペーン</a>
-            </div><!-- blog__item__text -->
-          </a>
-        </li><!-- blog__item -->
-        <li class="blog__item">
-          <a href="#">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/shopDetail/02.jpg" alt="ブログ記事写真">
-            <div class="blog__item__text">
-              <p class="date">2022.02.24</p>
-              <h3 class="blog__subtitle">【新宿店】ポイント2倍Day！この機会をお見逃しなく！ポイント2倍Day！この機会をお見逃しなく！ポイント2倍Day！この機会をお見逃しなく！</h3>
-              <p class="blog__text">人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか。人とコミュニケーションをとること、物理的に触れたり、間接的に感じたりすることが、今や遠隔で完結できるようになった。もともと「繋がり」という形を持たない結びつきではあるが、あらゆる物事と実際に接点を持つ場面がが減っている中、生身の身体が受け取る感覚はこれからどんなふうに変わっていくのだろうか</p>
-              <a class="blog__item__link" href="#">#ポイントDay</a>
-              <a class="blog__item__link" href="#">#ヘルスケア</a>
-            </div><!-- blog__item__text -->
-          </a>
-        </li><!-- blog__item -->
-      </ul><!-- blog__items-->
+        </li>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
+      </ul>
       <div class="btn">
-        <a href="#" class="btn__item">この店舗のブログを見る</a>
-      </div><!-- btn__item -->
-    </div><!-- inner -->
-  </section><!-- blog -->
+        <a href="<?php echo get_term_link($term_slug, $taxonomy); ?>" class="btn__item">この店舗のブログを見る</a>
+      </div>
+    </div>
+  </section>
 </section>
 <?php get_footer(); ?>
 </body>
