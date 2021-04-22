@@ -17,7 +17,6 @@
       <?php
         $type = get_query_var('cat_type');
         $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-
         $args = array(
           'tax_query' => array(
             array(
@@ -83,7 +82,10 @@
           </div>
         </div>
       </li>
-      <?php endwhile; endif; ?>
+      <?php endwhile; ?>
+      <?php else : ?>
+        <p style="font-size: 16px">該当する猫ちゃんが見つかりませんでした。</p>
+			<?php endif; ?>
     </ul>
     <!-- pagenation -->
     <?php get_template_part('_inc/pager'); ?>
