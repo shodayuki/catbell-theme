@@ -7,7 +7,7 @@
       安心・安全な猫専門ペットショップ
 
     <?php
-      elseif (is_page('cat_type') || is_single() || is_tax('cat_type') || is_tag()) :
+      elseif (is_page('cat_type') || is_page('contact') || is_single() || is_tax('cat_type') || is_tag()) :
         wp_title('');
 
       elseif (is_post_type_archive('shop')) : ?>
