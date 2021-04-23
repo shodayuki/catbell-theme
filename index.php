@@ -7,17 +7,16 @@
 						<h1 class="mainVisual__title">猫と暮らそう</h1>
 						<p class="mainVisual__text">安心・安全な猫専門ペットショップ</p>
 						<div class="mainVisual__btnArea">
-							<a href="#" class="mainVisual__btn">猫種一覧を見る</a>
-							<a href="#" class="mainVisual__btn">お店を見る</a>
+							<a href="<?php echo get_permalink(get_page_by_path('cat_type')->ID); ?>" class="mainVisual__btn">猫種一覧を見る</a>
+							<a href="<?php echo get_post_type_archive_link('shop'); ?>" class="mainVisual__btn">お店を見る</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- /.mainVisual -->
 		<?php
 			$args = array(
-				'post_type' => 'news', // ポストタイプのスラッグ
+				'post_type' => 'news',
 				'order' => 'DESC',
 				'posts_per_page' => 4
 			);
@@ -45,8 +44,7 @@
 				</div>
 			</div>
 		</div>
-		<?php endif; ?>
-		<!-- /.news -->
+		<?php endif; wp_reset_postdata(); ?>
 		<section class="findPets">
 			<div class="findPet__inner inner">
 				<div class="findPet__head">
@@ -55,78 +53,37 @@
 				</div>
 				<div class="findPet__wrap">
 					<ul class="findPet__list">
+						<?php
+							$countUp = 0;
+							$taxonomy_name = 'cat_type';
+							$taxonomys = get_terms($taxonomy_name);
+
+							if(!is_wp_error($taxonomys) && count($taxonomys)) :
+							foreach($taxonomys as $taxonomy) :
+
+							$term_id = esc_html($taxonomy->term_id);
+							$term_idsp = "cat_type_".$term_id;
+							$photo = get_field('cat_type_img',$term_idsp);
+
+							if ($countUp < 8) :
+						?>
 						<li class="findPet__item">
-							<a href="#" class="findPet__link">
+							<a href="<?php echo get_permalink(get_page_by_path('cat_type')->ID); ?><?php echo esc_html($taxonomy->slug); ?>" class="findPet__itemLink">
 								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/01.png" alt="スコティッシュフォールド">
+									<img src="<?php echo $photo; ?>" alt="<?php echo esc_html($taxonomy->name); ?>">
 								</div>
-								<p class="findPet__catName">スコティッシュ<br>フォールド</p>
+								<p class="findPet__catName"><?php echo esc_html($taxonomy->name); ?></p>
 							</a>
 						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/02.png" alt="アメリカンショートヘア">
-								</div>
-								<p class="findPet__catName">アメリカン<br>ショートヘア</p>
-							</a>
-						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/03.png" alt="メインクイーン">
-								</div>
-								<p class="findPet__catName">メインクイーン</p>
-							</a>
-						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/04.png" alt="エキゾチックショートヘア">
-								</div>
-								<p class="findPet__catName">エキゾチック<br>ショートヘア</p>
-							</a>
-						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/05.png" alt="ラグドール">
-								</div>
-								<p class="findPet__catName">ラグドール</p>
-							</a>
-						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/06.png" alt="ブリティッシュショートヘア">
-								</div>
-								<p class="findPet__catName">ブリティッシュ<br>ショートヘア</p>
-							</a>
-						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/07.png" alt="マンチカン">
-								</div>
-								<p class="findPet__catName">マンチカン</p>
-							</a>
-						</li>
-						<li class="findPet__item">
-							<a href="#" class="findPet__link">
-								<div class="findPet__catImg">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/typeList/4columns/08.png" alt="サイベリアン">
-								</div>
-								<p class="findPet__catName">サイベリアン</p>
-							</a>
-						</li>
+						<?php endif; $countUp++; ?>
+						<?php endforeach; endif; ?>
 					</ul>
 				</div>
 				<div class="findPet__more">
-					<a href="" class="util__link">猫種一覧を見る</a>
+					<a href="<?php echo get_permalink(get_page_by_path('cat_type')->ID); ?>" class="util__link">猫種一覧を見る</a>
 				</div>
 			</div>
 		</section>
-		<!-- /.findPet -->
 		<section class="findStore">
 			<div class="findStore__inner inner">
 				<div class="findStore__head">
@@ -142,22 +99,21 @@
 						<div class="findStore__area findStore__area--honshu2"></div>
 					</div>
 					<div class="findStore__shop">
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--sapporo">札幌店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--miyagi">宮城店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--shinjuku">新宿店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--ishikawa">石川店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--umeda">梅田店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--shizuoka">静岡店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--fukuoka">福岡店</div></a>
-						<a href="#" class="findStore__link"><div class="findStore__name findStore__name--kagoshima">鹿児島店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/sapporo" class="findStore__link"><div class="findStore__name findStore__name--sapporo">札幌店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/miyagi" class="findStore__link"><div class="findStore__name findStore__name--miyagi">宮城店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/shinju" class="findStore__link"><div class="findStore__name findStore__name--shinjuku">新宿店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/ishikawa" class="findStore__link"><div class="findStore__name findStore__name--ishikawa">石川店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/umeda" class="findStore__link"><div class="findStore__name findStore__name--umeda">梅田店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/shizuoka" class="findStore__link"><div class="findStore__name findStore__name--shizuoka">静岡店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/fukuoka" class="findStore__link"><div class="findStore__name findStore__name--fukuoka">福岡店</div></a>
+						<a href="<?php echo get_post_type_archive_link('shop'); ?>/kagoshima" class="findStore__link"><div class="findStore__name findStore__name--kagoshima">鹿児島店</div></a>
 					</div>
 				</div>
 				<div class="findStore__more">
-					<a href="#" class="util__link">店舗一覧を見る</a>
+					<a href="<?php echo get_post_type_archive_link('shop'); ?>" class="util__link">店舗一覧を見る</a>
 				</div>
 			</div>
 		</section>
-		<!-- /.store -->
 		<section class="blog">
 			<div class="blog__inner inner">
 				<div class="blog__head">
@@ -166,58 +122,35 @@
 				</div>
 				<div class="blog__wrap">
 					<ul class="blog__list">
+						<?php
+							$args = array(
+								'post_type' => 'blog',
+								'order' => 'DESC',
+								'posts_per_page' => 4
+							);
+							$my_query = new WP_Query($args);
+							if ($my_query->have_posts()) :
+							while ($my_query->have_posts()) : $my_query->the_post();
+						?>
 						<li class="blog__item">
-							<a href="#" class="blog__link">
+							<a href="<?php the_permalink(); ?>" class="blog__link">
 								<div class="blog__img">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/00.jpg" alt="">
+									<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 								</div>
 								<div class="blog__info">
-									<h3 class="blog__title">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪</h3>
-									<p class="blog__date">2022.02.24</p>
+									<h3 class="blog__title"><?php echo the_title(); ?></h3>
+									<p class="blog__date"><?php echo the_time('Y.m.d'); ?></p>
 								</div>
 							</a>
 						</li>
-						<li class="blog__item">
-							<a href="#" class="blog__link">
-								<div class="blog__img">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/01.jpg" alt="">
-								</div>
-								<div class="blog__info">
-									<h3 class="blog__title">ねこの日★祝！レア種も仲間入り、ふれあいコーナーで癒されて♪</h3>
-									<p class="blog__date">2022.02.22</p>
-								</div>
-							</a>
-						</li>
-						<li class="blog__item">
-							<a href="#" class="blog__link">
-								<div class="blog__img">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/02.jpg" alt="">
-								</div>
-								<div class="blog__info">
-									<h3 class="blog__title">【新宿店】ポイント2倍Day！この機会をお見逃しなく！</h3>
-									<p class="blog__date">2021.12.24</p>
-								</div>
-							</a>
-						</li>
-						<li class="blog__item">
-							<a href="#" class="blog__link">
-								<div class="blog__img">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets//img/blog/03.jpg" alt="">
-								</div>
-								<div class="blog__info">
-									<h3 class="blog__title">新年SEAL！療法食10%OFF&ペットアイテムおまとめ買いでプレゼント</h3>
-									<p class="blog__date">2021.12.24</p>
-								</div>
-							</a>
-						</li>
+						<?php endwhile; endif; ?>
 					</ul>
 				</div>
 				<div class="blog__more">
-					<a href="" class="util__link">ブログ一覧を見る</a>
+					<a href="<?php echo get_post_type_archive_link('blog'); ?>" class="util__link">ブログ一覧を見る</a>
 				</div>
 			</div>
 		</section>
-		<!-- /.blog -->
 		<div class="about">
 			<div class="about__inner inner">
 				<div class="about__head">
@@ -243,9 +176,7 @@
 					</div>
 			</div>
 		</div>
-		<!-- /.about -->
 	</main>
 	<?php get_footer(); ?>
 </body>
-
 </html>

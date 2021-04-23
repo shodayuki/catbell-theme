@@ -7,13 +7,13 @@
       <nav class="footer__nav">
         <ul class="footer__list">
           <li class="footer__item">
-            <a href="">ペットを探す</a>
+            <a href="<?php echo get_permalink(get_page_by_path('cat_type')->ID); ?>">ペットを探す</a>
           </li>
           <li class="footer__item">
-            <a href="">お店を探す</a>
+            <a href="<?php echo get_post_type_archive_link('shop'); ?>">お店を探す</a>
           </li>
           <li class="footer__item">
-            <a href="">ブログ一覧</a>
+            <a href="<?php echo get_post_type_archive_link('blog'); ?>">ブログ一覧</a>
           </li>
         </ul>
       </nav>
