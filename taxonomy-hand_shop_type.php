@@ -1,17 +1,9 @@
 <?php get_header(); ?>
 <section class="catList">
   <div class="catList__inner inner">
-    <!-- breadcrumb -->
-    <nav>
-      <ol class="breadcrumbs">
-        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">猫種一覧</a></li>
-        <li class="breadcrumbs__item">アメリカンショートヘア一覧</li>
-      </ol>
-    </nav>
-    <!-- /breadcrumb -->
+    <?php get_template_part('_inc/breadcrumbs'); ?>
     <div class="catList__head">
-      <h2 class="catList__title"><?php echo single_term_title(); ?>の一覧</h2>
+      <h2 class="catList__title"><?php echo single_term_title(); ?>の猫ちゃん一覧</h2>
     </div>
     <ul class="cat__lists">
       <?php
@@ -87,9 +79,7 @@
         <p style="font-size: 16px">該当する猫ちゃんが見つかりませんでした。</p>
 			<?php endif; ?>
     </ul>
-    <!-- pagenation -->
     <?php get_template_part('_inc/pager'); ?>
-    <!-- /pagenation -->
     <div class="about__store">
       <?php
         $term_id = get_queried_object_id();
@@ -119,8 +109,6 @@
     </div>
   </div>
 </section>
-<!-- /.anotherPet -->
 <?php get_footer(); ?>
 </body>
-
 </html>

@@ -1,11 +1,6 @@
 <?php get_header(); ?>
 <section class="shoplist inner page-shopList">
-  <nav>
-    <ol class="breadcrumbs">
-      <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-      <li class="breadcrumbs__item">お店を探す</li>
-    </ol>
-  </nav>
+  <?php get_template_part('_inc/breadcrumbs'); ?>
   <h2 class="shoplist__title">お店を探す</h2>
   <ul class="shoplist__items">
     <?php if (have_posts()) : ?>
@@ -23,11 +18,11 @@
           <dd><?php echo get_field('shop_hours'); ?></dd>
         </dl>
       </a>
-    </li><!-- shoplist__item1-->
+    </li>
     <?php endwhile; endif; ?>
-  </ul><!-- shoplist__items-->
+  </ul>
   <?php get_template_part('_inc/pager'); ?>
-</section><!-- shoplist-->
+</section>
 <?php get_footer(); ?>
 </body>
 </html>

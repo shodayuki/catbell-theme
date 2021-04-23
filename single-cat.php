@@ -1,16 +1,7 @@
 <?php get_header(); ?>
 <section class="single__cat">
   <div class="single__cat__inner inner">
-    <!-- breadcrumb -->
-    <nav>
-      <ol class="breadcrumbs">
-        <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">猫種一覧</a></li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">アメリカンショートヘア一覧</a></li>
-        <li class="breadcrumbs__item">猫ちゃん詳細</li>
-      </ol>
-    </nav>
-    <!-- /breadcrumb -->
+    <?php get_template_part('_inc/breadcrumbs'); ?>
     <div class="single__cat__wrap">
       <div class="single__cat__img">
         <div class="single__cat--mainImg your-class">
@@ -78,7 +69,7 @@
           <?php } ?>
         </div>
       </div>
-    </div><!-- /single__cat -->
+    </div>
     <div class="about__cat">
       <h3 class="about__cat__title">コメント</h3>
       <div class="about__cat__text">
@@ -110,14 +101,11 @@
           <a href="<?php echo get_permalink($post_object); ?>" class="util__link about__store_btn hover">お取扱い店舗を見る</a>
         </div>
       </div>
-    </div><!-- /.about__store -->
+    </div>
     <?php get_template_part('_inc/other-cat'); ?>
-    <!-- /.anotherPet__wrap -->
-
   </div>
 </section>
 <?php get_footer(); ?>
-<!-- slick -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js"></script>
 <script>
   $(".your-class").slick({

@@ -1,17 +1,6 @@
 <?php get_header(); ?>
-<!-- /header -->
-<!-- main -->
 <main class="main cntInner inner">
-	<!-- パンくずリスト -->
-	<nav>
-		<ol class="breadcrumbs">
-			<li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-			<li class="breadcrumbs__item"><a href="archive.html" class="breadcrumbs__link">ブログ一覧</a></li>
-			<li class="breadcrumbs__item">#ヘルスケアのブログ</li>
-		</ol>
-	</nav>
-	<!-- /パンくずリスト -->
-	<!-- content -->
+	<?php get_template_part('_inc/breadcrumbs'); ?>
   <section class="content">
     <div class="archive">
       <div class="archive__wrap">
@@ -49,12 +38,7 @@
 		</div>
 		<?php get_template_part('_inc/sidebar'); ?>
 	</section>
-	<!-- /content -->
 </main>
-<!-- /main -->
-<!-- footer -->
 <?php get_footer(); ?>
-<!-- /footer -->
-<!-- WordPress用テンプレートタグ -->
 </body>
 </html>

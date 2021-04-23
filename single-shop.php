@@ -2,14 +2,7 @@
 <section class="page-shopDetail">
   <div class="mainvisual">
     <div class="mainvisual__img inner">
-      <nav>
-        <ol class="breadcrumbs">
-          <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-          <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">お店を探す</a></li>
-          <li class="breadcrumbs__item">ショップ詳細</li>
-        </ol>
-      </nav>
-      <!-- breadcrumb__inner inner -->
+      <?php get_template_part('_inc/breadcrumbs'); ?>
       <img src="<?php echo get_field('shop_img'); ?>" alt="<?php echo the_title(); ?>">
     </div>
   </div>

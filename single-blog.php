@@ -1,24 +1,11 @@
 <?php get_header(); ?>
-<!-- /header -->
-<!-- main -->
 <main class="main cntInner inner">
-	<!-- パンくずリスト -->
-	<nav>
-		<ol class="breadcrumbs">
-			<li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-			<li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ブログ一覧</a></li>
-			<li class="breadcrumbs__item">猫にまつわるヒーリング効果とは！？プレゼントキャンペーンも実施中♪</li>
-		</ol>
-	</nav>
-	<!-- /パンくずリスト -->
-	<!-- top -->
+	<?php get_template_part('_inc/breadcrumbs'); ?>
 	<section>
 		<div class="top__img">
 			<img src="<?php echo get_field('blog_img'); ?>" alt="<?php echo the_title(); ?>">
 		</div>
 	</section>
-	<!-- /top -->
-  <!-- content -->
   <section class="content">
     <div class="blogs">
 			<span class="date"><?php echo the_time('Y.m.d'); ?></span>
@@ -29,7 +16,6 @@
 			<div class="blog__tagItems">
 				<?php the_tags('<div class="tag top__tag">','</div><div class="tag top__tag">','</div>'); ?>
 			</div>
-
 			<?php
 				$post_object = get_field('blog_shop');
 				$image = get_post_meta($post_object, 'shop_img', true);
@@ -58,7 +44,6 @@
 				</div>
 				<a href="<?php echo get_permalink($post_object); ?>" class="storeInfo__link link__btn"><span class="link__content">お取扱い店舗を見る</span></a>
 			</div>
-
 			<div class="newBlog">
 				<h3 class="newBlog__ttl"><?php echo get_the_title($post_object); ?>の最新ブログ</h3>
 				<div class="newBlog__wrapper">

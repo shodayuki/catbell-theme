@@ -1,15 +1,6 @@
 <?php get_header(); ?>
-<!-- main -->
 <main class="main cntInner inner">
-	<!-- パンくずリスト -->
-	<nav>
-		<ol class="breadcrumbs">
-			<li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">ホーム</a></li>
-			<li class="breadcrumbs__item">ブログ一覧</li>
-		</ol>
-	</nav>
-	<!-- /パンくずリスト -->
-	<!-- top -->
+	<?php get_template_part('_inc/breadcrumbs'); ?>
 	<?php if (have_posts()) : ?>
 	<a href="<?php the_permalink(); ?>">
 		<div class="top__img">
@@ -25,8 +16,6 @@
 		</div>
 	</a>
 	<?php endif; ?>
-	<!-- /top -->
-	<!-- content -->
 	<section class="content">
 		<div class="archive">
 			<div class="archive__wrap">
@@ -57,11 +46,7 @@
 		</div>
 		<?php get_template_part('_inc/sidebar'); ?>
 	</section>
-<!-- /content -->
 </main>
-<!-- /main -->
-<!-- footer -->
 <?php get_footer(); ?>
-<!-- /footer -->
 </body>
 </html>
